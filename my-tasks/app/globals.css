@@ -1,0 +1,108 @@
+:root {
+  /* Ionic color system - modern, friendly palette */
+  --ion-color-primary: #4f46e5; /* indigo-600 */
+  --ion-color-primary-rgb: 79, 70, 229;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #463dcc;
+  --ion-color-primary-tint: #6a64ea;
+
+  --ion-color-secondary: #06b6d4; /* cyan-500 */
+  --ion-color-secondary-rgb: 6, 182, 212;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #05a3bd;
+  --ion-color-secondary-tint: #27c2dc;
+
+  --ion-color-tertiary: #22c55e; /* green-500 */
+  --ion-color-success: #22c55e;
+  --ion-color-warning: #f59e0b;
+  --ion-color-danger: #ef4444; /* red-500 */
+  --ion-color-medium: #6b7280; /* gray-500 */
+  --ion-color-light: #f3f4f6; /* gray-100 */
+
+  /* Typography */
+  --app-title-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-color-primary: #6366f1; /* indigo-500 */
+    --ion-color-primary-shade: #585be0;
+    --ion-color-primary-tint: #7b7ef3;
+    /* Keep light surfaces; don't turn notes/cards black */
+    --ion-color-light: #f3f4f6;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Clean base background to let Ionic surfaces shine */
+body {
+  background:
+    radial-gradient(1200px 500px at 80% -100px, rgba(6, 182, 212, 0.25), transparent),
+    radial-gradient(900px 400px at -10% -50px, rgba(99, 102, 241, 0.25), transparent),
+    var(--ion-background-color, #ffffff);
+}
+
+/* Card container for main list */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+  padding: 8px 0;
+}
+@media (prefers-color-scheme: dark) {
+  .card {
+    /* Keep white card in dark too per request (no black notes) */
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+  }
+}
+
+/* Empty state styles */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 16px;
+  color: var(--ion-text-color, #111827);
+  opacity: 0.8;
+  text-align: center;
+}
+.emptyIcon {
+  font-size: 56px;
+  opacity: 0.4;
+}
+.emptyTitle {
+  font-weight: 600;
+  font-size: 18px;
+}
+.emptyHint {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+}
+
+/* Task item polishing */
+.taskItem ion-label {
+  font-size: 16px;
+}
+.taskItem--completed ion-label {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.taskMeta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--ion-color-medium);
+}
